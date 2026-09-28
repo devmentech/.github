@@ -1,0 +1,71 @@
+name: Feature proposal
+description: Propose an outcome or capability for discussion
+title: "[Feature]: "
+labels:
+  - "type:feature"
+  - "status:triage"
+body:
+  - type: input
+    id: repository
+    attributes:
+      label: Target repository or component
+      placeholder: devmentech/repository, package, or component
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Explain the user or operational problem before describing a solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe the observable result and who benefits from it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Proposed scope
+      description: State what is included and explicitly excluded.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe simpler options, workarounds, or relevant tradeoffs.
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List verifiable conditions that define completion.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and dependencies
+      description: Include migrations, compatibility concerns, external dependencies, or open decisions.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: I searched for an existing proposal covering the same outcome.
+          required: true
+        - label: I described the problem independently from the proposed implementation.
+          required: true

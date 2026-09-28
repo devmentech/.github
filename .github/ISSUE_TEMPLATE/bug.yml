@@ -1,0 +1,93 @@
+name: Bug report
+description: Report reproducible behavior that is not working as intended
+title: "[Bug]: "
+labels:
+  - "type:bug"
+  - "status:triage"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the project. Remove credentials, customer data, and other sensitive information before submitting.
+
+  - type: input
+    id: repository
+    attributes:
+      label: Affected repository or component
+      description: Identify the repository, package, application, or service.
+      placeholder: devmentech/repository, package, or component
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe the failure and why it matters.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest deterministic sequence that reproduces the problem.
+      placeholder: |
+        1. Start from ...
+        2. Run ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include relevant versions, platform, branch, commit, and deployment environment.
+      render: shell
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      options:
+        - Blocks all use of the affected capability
+        - Blocks a common workflow but has a workaround
+        - Degrades behavior without blocking work
+        - Cosmetic or low impact
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Add sanitized logs, screenshots, traces, or links that help validate the report.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: I searched for an existing issue describing the same problem.
+          required: true
+        - label: I removed credentials, customer data, and other sensitive information.
+          required: true
+        - label: This report does not disclose a security vulnerability publicly.
+          required: true
